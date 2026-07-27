@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vodoinstalater Beograd — predlog novog sajta (2 varijante)</title>
+  <meta name="description" content="Pregled dva predloga sajta za Vodoinstalater Beograd — izaberite varijantu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23191D24'/><path d='M50 20c-12 15-20 26-20 37a20 20 0 0 0 40 0c0-11-8-22-20-37z' fill='%23fff'/></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body{
+      margin: 0;
+      background: #14181F;
+      color: #EDF1F5;
+      font-family: "Inter", -apple-system, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .wrap{ width: min(1160px, 100% - 40px); margin-inline: auto; }
+    header{ padding: 56px 0 8px; text-align: center; }
+    .kicker{
+      font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+      color: #8B96A5;
+    }
+    h1{
+      margin: 12px auto 0; max-width: 22ch;
+      font-size: clamp(28px, 5vw, 44px); font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+    .uvod{ margin: 14px auto 0; max-width: 52ch; color: #A7B1BF; }
+    main{ padding: 40px 0 56px; }
+    .mreza{
+      display: grid; grid-template-columns: minmax(0,1fr); gap: 28px;
+    }
+    .kartica{
+      background: #1B212B;
+      border: 1px solid #2A323F;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .pregled{
+      position: relative;
+      aspect-ratio: 1440 / 1000;
+      overflow: hidden;
+      background: #0E1116;
+      border-bottom: 1px solid #2A323F;
+    }
+    .pregled iframe{
+      position: absolute; left: 0; top: 0;
+      width: 1440px; height: 1000px;
+      border: 0;
+      transform-origin: 0 0;
+      transform: scale(.24);
+      pointer-events: none;
+    }
+    .pregled .otvori{
+      position: absolute; inset: 0;
+      z-index: 2;
+      text-indent: -9999px;
+      background: transparent;
+      transition: background 150ms ease;
+    }
+    @media (hover: hover) and (pointer: fine){
+      .pregled .otvori:hover{ background: rgba(237,241,245,.06); }
+    }
+    .telo{ padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .telo h2{
+      margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em;
+    }
+    .telo h2 .broj{ color: #8B96A5; font-weight: 600; margin-right: 8px; }
+    .osobine{ margin: 0; color: #A7B1BF; font-size: 14.5px; }
+    .dugmad{ margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; padding-top: 8px; }
+    .btn{
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 46px; padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600; font-size: 15px; text-decoration: none;
+      transition: transform 150ms cubic-bezier(.23,1,.32,1), background 150ms ease;
+    }
+    .btn:active{ transform: scale(.97); }
+    .btn-1{ background: #E85D04; color: #141210; }
+    .btn-2{ background: #5B8DEF; color: #0B1524; }
+    @media (hover: hover) and (pointer: fine){
+      .btn-1:hover{ background: #F06E1B; }
+      .btn-2:hover{ background: #6F9CF2; }
+    }
+    footer{
+      border-top: 1px solid #2A323F;
+      padding: 20px 0 28px;
+      font-size: 13px; color: #8B96A5;
+    }
+    footer .wrap{ display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+    footer a{ color: #A7B1BF; }
+    :focus-visible{ outline: 3px solid #6F9CF2; outline-offset: 2px; }
+    @media (min-width: 860px){
+      .mreza{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .btn, .pregled .otvori{ transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">Predlog novog sajta</p>
+    <h1>Vodoinstalater Beograd — dva pravca, vi birate.</h1>
+    <p class="uvod">
+      Oba su napravljena od vaših stvarnih podataka: 5.0 na Google-u, 120 recenzija,
+      usluge i broj telefona. Pogledajte i recite koji vam leži — objava ide istog dana.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="mreza">
+      <article class="kartica">
+        <div class="pregled">
+          <iframe src="varijanta-1.html" title="Umanjeni prikaz varijante 1" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          <a class="otvori" href="varijanta-1.html">Otvori varijantu 1 — Hitan poziv</a>
+        </div>
+        <div class="telo">
+          <h2><span class="broj">01</span>Hitan poziv</h2>
+          <p class="osobine">Svetao, direktan, poster energija — broj telefona se vidi sa drugog kraja sobe. Za mušteriju kojoj upravo curi.</p>
+          <div class="dugmad">
+            <a class="btn btn-1" href="varijanta-1.html">Otvori varijantu 1</a>
+          </div>
+        </div>
+      </article>
+      <article class="kartica">
+        <div class="pregled">
+          <iframe src="varijanta-2.html" title="Umanjeni prikaz varijante 2" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          <a class="otvori" href="varijanta-2.html">Otvori varijantu 2 — Dubina</a>
+        </div>
+        <div class="telo">
+          <h2><span class="broj">02</span>Dubina</h2>
+          <p class="osobine">Taman, precizan, inženjerski — staklo, talas i miran ton. Za utisak ozbiljne tehničke firme.</p>
+          <div class="dugmad">
+            <a class="btn btn-2" href="varijanta-2.html">Otvori varijantu 2</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Demo prikaz — nije javno indeksiran.</span>
+    <a href="politika-privatnosti.html">Politika privatnosti (primer)</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    function skaliraj(){
+      document.querySelectorAll('.pregled').forEach(function(p){
+        var f = p.querySelector('iframe');
+        if (f && p.clientWidth > 0) f.style.transform = 'scale(' + (p.clientWidth / 1440) + ')';
+      });
+    }
+    skaliraj();
+    window.addEventListener('load', skaliraj);
+    window.addEventListener('resize', skaliraj);
+  })();
+</script>
+</body>
+</html>
