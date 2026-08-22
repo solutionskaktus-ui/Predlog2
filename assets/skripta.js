@@ -285,19 +285,27 @@
   var kadar = document.getElementById('dizanje-kadar');
   if (kadar && !mirno) {
     var naTelefonu = window.matchMedia('(max-width: 700px)').matches;
-    var UKUPNO = naTelefonu ? 13 : 25;
+    /* Telefon je ranije dobijao 13 kadrova pa se strela pomerala u skokovima.
+       Sada ide istih 25 kao na racunaru, samo u manjoj rezoluciji: kutija je na
+       telefonu 331 CSS px, dakle 700 px pokriva i ekrane sa dvostrukom gustinom. */
+    var UKUPNO = 25;
+    /* Verzija u putanji je obavezna: mobilni kadrovi su prebrojani sa 13 na 25, pa
+       ista imena m-01 do m-13 sada nose druge polozaje strele. Bez ovoga bi posetilac
+       sa starim kesom dobio pomesanu animaciju. */
+    var VERZIJA = 'v=49';
     var putanja = function (i) {
       var b = i < 10 ? '0' + i : String(i);
-      return naTelefonu ? 'assets/img/dizanje-m/m-' + b + '.webp'
-                        : 'assets/img/dizanje/k-' + b + '.webp';
+      return (naTelefonu ? 'assets/img/dizanje-m/m-' + b + '.webp'
+                         : 'assets/img/dizanje/k-' + b + '.webp') + '?' + VERZIJA;
     };
-    kadar.src = putanja(1);
+    /* Prvi kadar vec stoji u HTML-u, kroz <picture>, pa telefon skida mobilni a
+       racunar desktopski. Ovde se src ne dira, samo se ukljucuje u slojeve. */
     kadar.classList.add('sloj', 'tekuci');
 
     /* Svaki kadar dobija svoj sloj, pa se pri skrolu samo pali i gasi prozirnost.
        Ranije se menjala putanja iste slike, sto je teralo dekodiranje u toku skrola
        i pravilo trzanje na telefonu. */
-    var okvir = kadar.parentNode;
+    var okvir = kadar.closest('.masina-foto') || kadar.parentNode;
     var slojevi = [kadar];
     var spremno = false;
     var napraviSlojeve = function () {
@@ -609,12 +617,31 @@
     });
   }
 
+  /* ---------- petlja se vrti samo dok je na ekranu ---------- */
+  var snimakPetlje = document.querySelector('.petlja-snimak');
+  var petljaIde = false;
+  var proveriPetlju = function () {
+    if (!snimakPetlje) { return; }
+    var o = snimakPetlje.getBoundingClientRect();
+    var vh = window.innerHeight || 800;
+    var uKadru = o.bottom > -80 && o.top < vh + 80;
+    if (uKadru === petljaIde) { return; }
+    petljaIde = uKadru;
+    if (uKadru) {
+      var obecanje = snimakPetlje.play();
+      if (obecanje && obecanje.catch) { obecanje.catch(function () {}); }
+    } else {
+      snimakPetlje.pause();
+    }
+  };
+
   /* ---------- jedan osluskivac skrola za sve, jednom po kadru ekrana ---------- */
   var poslovi = [];
   if (typeof osveziKadar === 'function') { poslovi.push(osveziKadar); }
   if (typeof proveriProlaz === 'function') { poslovi.push(proveriProlaz); }
   if (typeof proveriZaglavlje === 'function') { poslovi.push(proveriZaglavlje); }
   poslovi.push(proveriTraku);
+  if (snimakPetlje && !mirno) { poslovi.push(proveriPetlju); }
   if (poslovi.length) {
     var zakazano = false;
     var tik = function () {

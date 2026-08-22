@@ -18,11 +18,13 @@
 <meta property="og:image:alt" content="Kamion sa korpom CTE Z 20E, radna visina 20 metara, strela podignuta uz zid hale">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://najamkorpe.rs/assets/img/naslovna.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141414'/%3E%3Cpath d='M6 8l10 16L26 8l-6 3-4 7-4-7z' fill='%231A3E8C'/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/stil.css?v=48">
+<link rel="stylesheet" href="assets/stil.css?v=49">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -226,9 +228,12 @@
       </div>
       <div class="hero-masina">
         <div class="masina-foto">
-          <img id="dizanje-kadar" src="assets/img/dizanje/k-01.webp"
-            alt="Kamion sa korpom CTE Z 20E, strela se podiže iz transportnog položaja"
-            width="1830" height="1034" fetchpriority="high">
+          <picture>
+            <source media="(max-width: 700px)" srcset="assets/img/dizanje-m/m-01.webp?v=49">
+            <img id="dizanje-kadar" src="assets/img/dizanje/k-01.webp?v=49"
+              alt="Kamion sa korpom CTE Z 20E, strela se podiže iz transportnog položaja"
+              width="1830" height="1034" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </div>
@@ -649,8 +654,11 @@
           traje i koliko okvirno košta. Tačan iznos dobijate u kalkulatoru ili telefonom.</p>
         </div>
         <figure class="petlja otkrij">
-          <img src="assets/video/korpa-petlja.webp" width="520" height="294" loading="lazy"
-            decoding="async" alt="Strela korpe se podiže i spušta">
+          <video class="petlja-snimak" width="520" height="292" muted loop playsinline
+            preload="metadata" poster="assets/video/korpa-petlja-poster.webp"
+            aria-label="Zglobna strela korpe se podiže i spušta">
+            <source src="assets/video/korpa-petlja.mp4" type="video/mp4">
+          </video>
           <figcaption>Zglobna strela, radna visina 20&nbsp;m</figcaption>
         </figure>
       </div>
@@ -975,7 +983,7 @@
   <a class="tp-racun" href="#kalkulator"><span id="tp-tekst">Izračunajte cenu</span></a>
 </div>
 
-<script src="assets/skripta.js?v=48" defer></script>
+<script src="assets/skripta.js?v=49" defer></script>
 
 </body>
 </html>

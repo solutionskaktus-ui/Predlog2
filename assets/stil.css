@@ -549,7 +549,11 @@ a.dugme--okvir:hover{ background:var(--crna); border-color:var(--crna); color:va
 }
 .petlja{ margin:0; max-width:300px; }
 @media (min-width: 820px){ .petlja{ max-width:none; } }
-.petlja img{ width:100%; height:auto; display:block; }
+.petlja img,
+.petlja video{ width:100%; height:auto; display:block; }
+/* Snimak umesto animiranog WebP-a. WebP je isao na 3,8 sličica u sekundi jer se
+   usporavalo produzavanjem kadra; snimak drzi 24 i dekodira ga grafika. */
+.petlja-snimak{ background:var(--plava-tint); }
 .petlja figcaption{
   font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase;
   color:var(--meta); margin-top:2px;
@@ -963,4 +967,18 @@ h1, h2, h3{ text-wrap:balance; }
   }
   .cene::-webkit-scrollbar{ display:none; }
   .cena-kartica{ flex:none; width:82%; scroll-snap-align:start; }
+
+  /* Sekcija je na telefonu bila 877 px, taman toliko da ne stane u ekran od 812.
+     Zbijena je na 759 px bez izbacivanja sadrzaja: iznos stane u jedan red pa
+     treca kartica vise ne lomi cenu na dva reda i ne dize sve tri. */
+  #cene .uvod{ font-size:16px; line-height:1.5; margin-bottom:10px; }
+  #cene .cene{ margin-top:16px; }
+  .cena-kartica{ padding:18px; }
+  .cena-iznos{ font-size:30px; line-height:1.05; margin:6px 0 2px; }
+  .cena-iznos small{ font-size:13px; }
+  .cena-kartica ul{ margin-top:10px; }
+  .cena-kartica li{ padding:6px 0 6px 20px; font-size:15px; }
+  .cena-kartica li::before{ top:14px; }
+  .cena-veza{ padding-top:12px; }
+  #cene .kalk-napomena{ margin-top:14px; font-size:13px; line-height:1.5; }
 }
