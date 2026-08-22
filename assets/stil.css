@@ -553,7 +553,7 @@ a.dugme--okvir:hover{ background:var(--crna); border-color:var(--crna); color:va
 .petlja video{ width:100%; height:auto; display:block; }
 /* Snimak umesto animiranog WebP-a. WebP je isao na 3,8 sličica u sekundi jer se
    usporavalo produzavanjem kadra; snimak drzi 24 i dekodira ga grafika. */
-.petlja-snimak{ background:var(--plava-tint); }
+.petlja-snimak{ background:#E4E3E5; }   /* siva studija iz snimka, da nema bleska pre ucitavanja */
 .petlja figcaption{
   font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase;
   color:var(--meta); margin-top:2px;

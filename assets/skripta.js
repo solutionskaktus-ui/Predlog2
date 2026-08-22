@@ -292,7 +292,7 @@
     /* Verzija u putanji je obavezna: mobilni kadrovi su prebrojani sa 13 na 25, pa
        ista imena m-01 do m-13 sada nose druge polozaje strele. Bez ovoga bi posetilac
        sa starim kesom dobio pomesanu animaciju. */
-    var VERZIJA = 'v=49';
+    var VERZIJA = 'v=50';
     var putanja = function (i) {
       var b = i < 10 ? '0' + i : String(i);
       return (naTelefonu ? 'assets/img/dizanje-m/m-' + b + '.webp'
